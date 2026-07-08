@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { 
   BarChart3, Code2, Target, Calendar, 
-  ChevronRight, ArrowUpRight, CheckCircle2, Circle, Sparkles
+  ChevronRight, ArrowUpRight, Circle, Sparkles
 } from "lucide-react";
 
 export function DashboardPreview() {

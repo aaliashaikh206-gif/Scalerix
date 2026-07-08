@@ -1,12 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Brain, Target, Compass, Zap } from "lucide-react";
+import { Target, Compass, Zap } from "lucide-react";
+import Image from "next/image";
 
 export function About() {
   const features = [
     {
-      icon: <Brain size={24} />,
+      icon: <div className="w-6 h-6 rounded-full overflow-hidden"><Image src="/logo.jpg" alt="AI" width={24} height={24} className="object-cover w-full h-full" /></div>,
       title: "AI-Powered Insights",
       description: "Our proprietary AI analyzes millions of data points to find your perfect career match."
     },
@@ -94,8 +95,8 @@ export function About() {
                   transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
                   className="absolute inset-4 border-b border-l border-white/30 rounded-full"
                 />
-                <div className="w-24 h-24 bg-white shadow-[0_0_50px_rgba(255,255,255,0.3)] rounded-full flex items-center justify-center">
-                  <Brain size={40} className="text-black" />
+                <div className="w-24 h-24 bg-white shadow-[0_0_50px_rgba(255,255,255,0.3)] rounded-full flex items-center justify-center overflow-hidden">
+                  <Image src="/logo.jpg" alt="Scalerix Logo" width={96} height={96} className="object-cover w-full h-full" />
                 </div>
               </div>
 

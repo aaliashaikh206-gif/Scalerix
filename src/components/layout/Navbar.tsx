@@ -66,9 +66,12 @@ export function Navbar() {
           </nav>
 
           {/* CTA Button */}
-          <div className="hidden md:flex">
+          <div className="hidden md:flex items-center gap-4">
+            <Link href="/login" className="text-sm font-medium text-text-secondary hover:text-white transition-colors">
+              Sign In
+            </Link>
             <Link
-              href="#get-started"
+              href="/register"
               className="bg-white text-black px-6 py-2.5 rounded-full font-medium text-sm hover:bg-white/90 hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)]"
             >
               Get Started
@@ -105,7 +108,7 @@ export function Navbar() {
               </Link>
             ))}
             <Link
-              href="#get-started"
+              href="/register"
               onClick={() => setIsMobileMenuOpen(false)}
               className="bg-white text-black px-6 py-3 rounded-xl font-medium text-center mt-2"
             >
