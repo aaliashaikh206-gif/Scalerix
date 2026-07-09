@@ -68,7 +68,12 @@ export function CustomCursor() {
     };
   }, [cursorX, cursorY]);
 
-  if (typeof window === "undefined") return null;
+  const [isMounted, setIsMounted] = useState(false);
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) return null;
 
   return (
     <motion.div
