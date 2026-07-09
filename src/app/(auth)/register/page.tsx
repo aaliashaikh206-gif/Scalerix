@@ -6,7 +6,16 @@ import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
 import { registerUser } from "@/lib/services/auth";
 
-const TechInput = ({ label, type, name, placeholder, required, error }: any) => (
+interface TechInputProps {
+  label: string;
+  type: string;
+  name: string;
+  placeholder?: string;
+  required?: boolean;
+  error?: string;
+}
+
+const TechInput = ({ label, type, name, placeholder, required, error }: TechInputProps) => (
   <div className={`relative border p-4 mt-6 group transition-colors ${error ? 'border-red-500/50' : 'border-white/10'} hover:border-white/20`}>
     {/* Corners + */}
     <span className="absolute -top-[9px] -left-[4px] text-white/40 text-sm font-mono leading-none pointer-events-none">+</span>
@@ -16,7 +25,7 @@ const TechInput = ({ label, type, name, placeholder, required, error }: any) => 
 
     {/* Label */}
     <div className="absolute -top-[10px] left-4 bg-background px-2 flex items-center gap-2 pointer-events-none">
-      <span className="text-white/20 italic text-xs font-mono font-bold">///</span>
+      <span className="text-white/20 italic text-xs font-mono font-bold">{"///"}</span>
       <span className="text-white/60 text-xs font-mono tracking-widest">{label}</span>
     </div>
 

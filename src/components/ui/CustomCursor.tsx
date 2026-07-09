@@ -57,7 +57,7 @@ export function CustomCursor() {
     });
     observer.observe(document.body, { childList: true, subtree: true });
 
-    setIsVisible(true);
+    const timeoutId = setTimeout(() => setIsVisible(true), 0);
 
     return () => {
       window.removeEventListener("mousemove", moveCursor);
@@ -70,7 +70,8 @@ export function CustomCursor() {
 
   const [isMounted, setIsMounted] = useState(false);
   useEffect(() => {
-    setIsMounted(true);
+    const timeoutId = setTimeout(() => setIsMounted(true), 0);
+    return () => clearTimeout(timeoutId);
   }, []);
 
   if (!isMounted) return null;
