@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import { Toaster } from 'sonner';
+import { CustomCursor } from "@/components/ui/CustomCursor";
 import "./globals.css";
 
 const inter = Inter({
@@ -31,7 +32,8 @@ export default function RootLayout({
       <head>
         <title>Scalerix - Scale Your Career</title>
       </head>
-      <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
+      <body className="min-h-full flex flex-col bg-background text-foreground font-sans cursor-none">
+        <CustomCursor />
         {children}
         <Toaster theme="dark" position="top-right" />
       </body>

@@ -6,11 +6,23 @@ import { motion } from "framer-motion";
 
 export function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <section id="home" className="relative w-full h-full flex items-center justify-center overflow-hidden">
+      {/* Animated Grid Background */}
+      <div className="absolute inset-0 -z-10 bg-animated-grid pointer-events-none" />
+
       {/* Subtle Background Glow */}
-      <div className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center">
-        <div className="w-[600px] h-[600px] rounded-full bg-white/5 blur-[120px]" />
-      </div>
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
+        className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center"
+      >
+        <motion.div 
+          animate={{ scale: [1, 1.05, 1], opacity: [0.5, 0.8, 0.5] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          className="w-[600px] h-[600px] rounded-full bg-white/5 blur-[120px]" 
+        />
+      </motion.div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <motion.div
@@ -51,13 +63,13 @@ export function Hero() {
             href="/register"
             className="btn-primary w-full sm:w-auto text-center"
           >
-            Get Started
+            Join Waitlist
           </Link>
           <Link
-            href="/login"
+            href="/register"
             className="btn-secondary w-full sm:w-auto text-center"
           >
-            Login
+            Register
           </Link>
         </motion.div>
       </div>

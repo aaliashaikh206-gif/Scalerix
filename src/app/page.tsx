@@ -1,21 +1,13 @@
 import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
-import { About } from "@/components/sections/About";
-import { WhyChoose } from "@/components/sections/WhyChoose";
-import { CTA } from "@/components/sections/CTA";
 
 export default function Home() {
   return (
-    <>
+    <div className="h-screen overflow-hidden flex flex-col">
       <Navbar />
-      <main className="flex-1">
+      <main className="flex-1 flex flex-col items-center justify-center relative">
         <Hero />
-        <About />
-        <WhyChoose />
-        <CTA />
       </main>
-      <Footer />
-    </>
+    </div>
   );
 }
